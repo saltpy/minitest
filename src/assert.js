@@ -4,9 +4,7 @@ var AssertionError = require('assert').AssertionError;
 var callsite = require('callsite');
 var fs = require('fs');
 
-module.exports = process.env.NO_ASSERT ? function(){} : assert;
-
-function assert(expr) {
+module.exports = process.env.NO_ASSERT ? function(){} : function assert(expr) {
   if (expr) return;
 
   var stack = callsite();
@@ -15,7 +13,7 @@ function assert(expr) {
   var lineno = call.getLineNumber();
   var src = fs.readFileSync(file, 'utf8');
   var line = src.split('\n')[lineno - 1];
-  var src = line.match(/assert\((.*)\)/)[1];
+  src = line.match(/assert\((.*)\)/)[1];
 
   var err = new AssertionError({
     message: src,
@@ -23,4 +21,4 @@ function assert(expr) {
   });
 
   throw err;
-}
+};
