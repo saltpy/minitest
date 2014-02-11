@@ -11,10 +11,14 @@
     "url": "git://github.com/saltpy/minitest.git"
   },
   "dependencies": {
+    "callsite": "1.0.0"
   },
   "devDependencies": {
     "jake": "0.5.x",
     "easylint": "git://github.com/saltpy/easylint.git"
+  },
+  "main": {
+    "src/minitest"
   },
   "engines": {
     "node": "0.10.x"
