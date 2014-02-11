@@ -1,6 +1,6 @@
 "use strict";
 
-var assert = require("better-assert");
+var assert = require("./assert");
 
 exports.assertSameType = function(a, b) {
   exports.assert(Object.prototype.toString.call(a) === Object.prototype.toString.call(b));
