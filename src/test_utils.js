@@ -17,5 +17,3 @@ exports.assertArrayEqual = function(a, b) {
 exports.assertStructEqual = function(a, b) {
   exports.assertArrayEqual(Object.keys(a).sort(), Object.keys(b).sort());
 };
-
-exports.assert = assert;
