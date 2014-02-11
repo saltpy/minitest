@@ -17,9 +17,7 @@
     "jake": "0.5.x",
     "easylint": "git://github.com/saltpy/easylint.git"
   },
-  "main": {
-    "src/minitest"
-  },
+  "main": "src/minitest",
   "engines": {
     "node": "0.10.x"
   }
